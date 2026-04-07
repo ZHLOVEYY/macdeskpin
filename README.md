@@ -31,7 +31,7 @@ Download the latest `.dmg` from [Releases](../../releases/latest), open it and d
 ## Build from source
 
 ```bash
-git clone https://github.com/<your-user>/macDeskpin.git
+git clone https://github.com/ZHLOVEYY/macDeskpin.git
 cd macDeskpin
 ./build.sh        # swift build -c release
 ./package.sh      # produces dist/macDeskpin-<version>.dmg
