@@ -1,0 +1,15 @@
+---
+version: 0
+roots:
+  - name: "/Library/Developer/CommandLineTools/usr/include/swift"
+    type: directory
+    contents:
+      - name: "module.modulemap"
+        type: file
+        external-contents: "/dev/null"
+      - name: "bridging.modulemap"
+        type: file
+        external-contents: "/Library/Developer/CommandLineTools/usr/include/swift/bridging.modulemap"
+      - name: "bridging"
+        type: file
+        external-contents: "/Library/Developer/CommandLineTools/usr/include/swift/bridging"
