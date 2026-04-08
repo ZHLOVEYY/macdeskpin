@@ -24,9 +24,28 @@ Your Mac desktop is the most-seen surface in your day — but most todo apps hid
 
 ## Install
 
-Download the latest `.dmg` from [Releases](../../releases/latest), open it and drag macDeskpin to Applications.
+1. Download the latest `.dmg` from [Releases](../../releases/latest)
+2. Open the dmg and drag **DeskPin.app** to your **Applications** folder
+3. **Run the one-line command below** to remove the macOS quarantine flag (see next section)
+4. Launch DeskPin from Launchpad / Spotlight
 
-> First launch: right-click the app → Open (because the build is not notarized yet).
+### ⚠️ First launch on macOS — required one-time step
+
+Because macDeskpin is **not yet notarized by Apple** (notarization requires a $99/year Apple Developer account), macOS Gatekeeper will refuse to open the app and show a misleading **"DeskPin is damaged and can't be opened"** message. The app is **not actually damaged** — this is macOS protecting you from unsigned downloads.
+
+To allow the app to run, open **Terminal** and paste this single command:
+
+```bash
+sudo xattr -r -d com.apple.quarantine /Applications/DeskPin.app
+```
+
+It will ask for your Mac password (the same one you use to log in). Type it and press Enter — nothing will be printed if it succeeds. Then you can launch DeskPin normally from Launchpad.
+
+**You only need to do this once**, after the very first install. Future updates may need it again.
+
+**What this command does (plain English):** macOS attaches an invisible "quarantine" tag to anything you download from the internet. This command removes that tag from `DeskPin.app`, telling macOS "I trust this file." It does not change DeskPin itself, does not give DeskPin any extra power, and does not affect any other app on your system. The exact same command is recommended by many open-source Mac apps in the same situation (e.g. iina, NepTunes, Lyricsify).
+
+If you'd rather not run a terminal command, you can instead [build from source](#build-from-source) — apps you build yourself are not quarantined.
 
 ## Build from source
 
