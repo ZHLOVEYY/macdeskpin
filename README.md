@@ -34,7 +34,7 @@ Download the latest `.dmg` from [Releases](../../releases/latest), open it and d
 git clone https://github.com/ZHLOVEYY/macDeskpin.git
 cd macDeskpin
 ./build.sh        # swift build -c release
-./package.sh      # produces dist/macDeskpin-<version>.dmg
+./package.sh      # produces dist/macDeskpin-<version>.dmg (ad-hoc signed)
 ```
 
 Requirements: macOS 14+, Xcode 15+ / Swift 5.9.
